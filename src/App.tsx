@@ -1,9 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense, lazy } from "react"
 import { axiosInterceptor } from "./services/axiosInterceptor"
-import { AppBar } from "@mui/material"
+import { AppBar, Container } from "@mui/material"
 
 const Home = lazy(() => import("./module/Home/Home"))
+const Category = lazy(() => import("./module/Category/Category"))
+const PageNotFound = lazy(() => import("./module/PageNotFound/PageNotFound"))
 
 function App() {
   axiosInterceptor()
@@ -11,24 +13,48 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <header className="App-header">
-          <AppBar component="nav" className="header-bar">
+          <AppBar component="nav" className="header-bar title-font">
             Modern Walk
           </AppBar>
         </header>
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <Suspense fallback={<>loading</>}>
-                  <Home />
-                </Suspense>
-              }
-            />
-            <Route path="*" element={<h1>Not found</h1>} />
-          </Routes>
+        <main className="main-body">
+          <Container maxWidth="xl">
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <Suspense fallback={<>loading</>}>
+                    <Home />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/mens-clothing"
+                element={
+                  <Suspense fallback={<>loading</>}>
+                    <Category />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/womens-clothing"
+                element={
+                  <Suspense fallback={<>loading</>}>
+                    <Category />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <Suspense fallback={<>loading</>}>
+                    <PageNotFound />
+                  </Suspense>
+                }
+              />
+            </Routes>
+          </Container>
         </main>
-        <footer>footer goes here</footer>
       </div>
     </BrowserRouter>
   )

@@ -3,12 +3,12 @@ import { Provider } from "react-redux"
 import { store } from "./app/store"
 import App from "./App"
 
-test("renders learn react link", () => {
-  const { getByText } = render(
+test("renders app component", () => {
+  render(
     <Provider store={store}>
       <App />
     </Provider>,
   )
 
-  expect(screen.getByText(/header goes here/i)).toBeInTheDocument()
+  expect(screen.getByText(/Modern Walk/i)).toBeInTheDocument()
 })
