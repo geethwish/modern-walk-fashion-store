@@ -25,3 +25,8 @@ export interface ProductCardProps {
 export interface ProductsFilter {
   limit?: number
 }
+
+export interface ProductCategoryType {
+  filters?: ProductsFilter
+  category: string
+}

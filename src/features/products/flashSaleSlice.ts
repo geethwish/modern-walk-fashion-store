@@ -4,12 +4,12 @@ import { RootState, AppThunk } from "../../app/store"
 import { requestProducts } from "./ProductsAPI"
 import { Product, ProductsFilter } from "./Products.types"
 
-export interface CounterState {
+export interface FlashSalesState {
   products: Product[] | []
   status: "idle" | "loading" | "success" | "failed"
 }
 
-const initialState: CounterState = {
+const initialState: FlashSalesState = {
   products: [],
   status: "idle",
 }

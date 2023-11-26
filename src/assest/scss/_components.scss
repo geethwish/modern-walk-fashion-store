@@ -24,7 +24,7 @@
 // category card component
 .category-card {
   padding: 20px;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -35,14 +35,18 @@
     color: $textColorLight;
   }
 }
+.category-container {
+  padding-bottom: 50px;
+}
 
 // product card component
 .product-card {
+  box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.15) !important;
   padding: 25px;
-  border-radius: 10px !important;
+  border-radius: 30px !important;
   min-height: 360px;
   max-width: 400px;
-  min-width: 200px;
+  min-width: 180px;
   position: relative;
   cursor: pointer;
   .custom-text {
@@ -63,7 +67,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    border-radius: 10px;
+    border-radius: 30px;
     min-height: 110px;
     padding: 15px 20px;
     text-align: center;

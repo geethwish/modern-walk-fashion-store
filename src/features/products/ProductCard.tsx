@@ -22,7 +22,7 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   }
 
   return (
-    <Paper elevation={1} className={`product-card`}>
+    <Paper elevation={0} className={`product-card`}>
       <Typography
         variant="body1"
         className="title-2 font-weight-700 custom-text"
