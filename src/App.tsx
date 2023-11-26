@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom"
 import { Suspense, lazy } from "react"
 import { axiosInterceptor } from "./services/axiosInterceptor"
 import { AppBar, Container } from "@mui/material"
@@ -15,7 +15,9 @@ function App() {
       <div className="App">
         <header className="App-header">
           <AppBar component="nav" className="header-bar title-font">
-            Modern Walk
+            <Link to={"/"} className="link">
+              Modern Walk
+            </Link>
           </AppBar>
         </header>
         <main className="main-body">
