@@ -1,5 +1,5 @@
 import { Box, Typography } from "@mui/material"
-import React, { useEffect } from "react"
+import { useEffect } from "react"
 import Section from "../../components/Section/Section"
 import CategoryCard from "../../components/CategoryCard/CategoryCard"
 import ProductCard from "../../features/products/ProductCard"

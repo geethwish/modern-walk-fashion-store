@@ -1,4 +1,4 @@
-import React, { FC } from "react"
+import { FC, memo } from "react"
 import { ProductCardProps } from "./Products.types"
 import { Paper, Typography } from "@mui/material"
 
@@ -47,4 +47,4 @@ const ProductCard: FC<ProductCardProps> = ({ product }) => {
   )
 }
 
-export default ProductCard
+export default memo(ProductCard)
