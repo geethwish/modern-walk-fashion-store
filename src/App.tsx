@@ -1,10 +1,12 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import "./App.css"
 import { Suspense, lazy } from "react"
+import { axiosInterceptor } from "./services/axiosInterceptor"
 
 const Home = lazy(() => import("./module/Home/Home"))
 
 function App() {
+  axiosInterceptor()
   return (
     <BrowserRouter>
       <div className="App">
