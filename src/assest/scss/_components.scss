@@ -35,10 +35,34 @@
   }
 }
 
-.primary {
-  background-color: $primaryColor !important;
-}
+.product-card {
+  padding: 25px;
+  border-radius: 10px !important;
+  min-height: 360px;
+  max-width: 400px;
+  min-width: 200px;
+  position: relative;
+  .custom-text {
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+  }
 
-.secondary {
-  background-color: $secondaryColor !important;
+  .product-image {
+    height: 140px;
+    object-fit: contain;
+    padding: 15px;
+  }
+  .product-card-footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 10px;
+    min-height: 110px;
+    padding: 15px 20px;
+    text-align: center;
+  }
 }

@@ -2,6 +2,9 @@
 .title-font {
   font-size: 32px !important;
 }
+.title-2 {
+  font-size: 1.15rem !important;
+}
 
 // font weights
 .font-weight-700 {
@@ -11,4 +14,8 @@
 // font colors
 .font-white {
   color: $textColorLight !important;
+}
+
+.font-blue {
+  color: $textColor3 !important;
 }
