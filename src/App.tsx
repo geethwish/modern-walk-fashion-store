@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
-import "./App.css"
 import { Suspense, lazy } from "react"
 import { axiosInterceptor } from "./services/axiosInterceptor"
+import { AppBar } from "@mui/material"
 
 const Home = lazy(() => import("./module/Home/Home"))
 
@@ -10,7 +10,11 @@ function App() {
   return (
     <BrowserRouter>
       <div className="App">
-        <header className="App-header">header goes here</header>
+        <header className="App-header">
+          <AppBar component="nav" className="header-bar">
+            Modern Walk
+          </AppBar>
+        </header>
         <main>
           <Routes>
             <Route

@@ -1,0 +1,9 @@
+.header-bar {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  background-color: $backgroundColor !important;
+}
