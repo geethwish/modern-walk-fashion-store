@@ -1,17 +1,10 @@
-# vite-template-redux
+# modern-walk-fashion-store
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+## Instructions
 
-```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
-```
-
-## Goals
-
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+1. install node js (required version : 18.16.1) : https://nodejs.org/en/
+2. install yarn https://classic.yarnpkg.com/lang/en/docs/cli/install/
+3. install libraries using `yarn install ` or `npm i`
 
 ## Scripts
 
@@ -19,9 +12,4 @@ npx degit reduxjs/redux-templates/packages/vite-template-redux my-app
 - `build` - build for production
 - `preview` - locally preview production build
 - `test` - launch test runner
-
-## Inspiration
-
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+- `converge` - Launch test coverage details
