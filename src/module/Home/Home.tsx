@@ -1,10 +1,36 @@
 import { Box, Typography } from "@mui/material"
-import React from "react"
+import React, { useEffect } from "react"
 import Section from "../../components/Section/Section"
 import CategoryCard from "../../components/CategoryCard/CategoryCard"
 import ProductCard from "../../features/products/ProductCard"
+import Carousel from "../../components/Carousel/Carousel"
+import { SwiperSlide } from "swiper/react"
+import PageLoader from "../../components/Loader/PageLoader"
+import { useAppDispatch, useAppSelector } from "../../app/hooks"
+import {
+  cleanFlashSales,
+  fetchFlashProducts,
+  flashProducts,
+  flashProductsApiStatus,
+} from "../../features/products/flashSaleSlice"
 
 const Home = () => {
+  const dispatch = useAppDispatch()
+
+  const apiStatus = useAppSelector(flashProductsApiStatus)
+  const products = useAppSelector(flashProducts)
+
+  useEffect(() => {
+    dispatch(fetchFlashProducts({ limit: 20 }))
+
+    return () => {
+      dispatch(cleanFlashSales())
+    }
+  }, [])
+
+  if (apiStatus === "loading") {
+    return <PageLoader />
+  }
   return (
     <div>
       <Section>
@@ -14,54 +40,17 @@ const Home = () => {
           </Typography>
         </div>
         <div>
-          <Box
-            sx={{
-              display: "grid",
-              gridTemplateColumns: { md: "1fr 1fr 1fr 1fr" },
-              gap: 7,
-            }}
-          >
-            <ProductCard
-              product={{
-                name: "Mens Cotton Jacket",
-                description:
-                  "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking...",
-                price: "55.99",
-                imageUrl: "",
-                category: "men",
-              }}
-            />
-            <ProductCard
-              product={{
-                name: "Mens Cotton Jacket",
-                description:
-                  "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking...",
-                price: "55.99",
-                imageUrl: "",
-                category: "men",
-              }}
-            />
-            <ProductCard
-              product={{
-                name: "Mens Cotton Jacket",
-                description:
-                  "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking...",
-                price: "55.99",
-                imageUrl: "",
-                category: "women",
-              }}
-            />
-            <ProductCard
-              product={{
-                name: "Mens Cotton Jacket",
-                description:
-                  "Great outerwear jackets for Spring/Autumn/Winter, suitable for many occasions, such as working, hiking...",
-                price: "55.99",
-                imageUrl: "",
-                category: "women",
-              }}
-            />
-          </Box>
+          <Carousel>
+            {products.length > 0 ? (
+              products.map((product) => (
+                <SwiperSlide key={product.id}>
+                  <ProductCard product={product} />
+                </SwiperSlide>
+              ))
+            ) : (
+              <>no products</>
+            )}
+          </Carousel>
         </div>
       </Section>
       <Section>

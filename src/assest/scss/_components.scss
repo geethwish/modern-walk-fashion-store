@@ -21,6 +21,7 @@
   margin-top: 40px;
 }
 
+// category card component
 .category-card {
   padding: 20px;
   border-radius: 10px !important;
@@ -35,6 +36,7 @@
   }
 }
 
+// product card component
 .product-card {
   padding: 25px;
   border-radius: 10px !important;
@@ -42,6 +44,7 @@
   max-width: 400px;
   min-width: 200px;
   position: relative;
+  cursor: pointer;
   .custom-text {
     text-align: center;
     text-overflow: ellipsis;
@@ -65,4 +68,22 @@
     padding: 15px 20px;
     text-align: center;
   }
+
+  .product-description {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+
+// Page loader component
+.page-loader {
+  min-width: 100%;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

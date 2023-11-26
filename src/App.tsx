@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 import { Suspense, lazy } from "react"
 import { axiosInterceptor } from "./services/axiosInterceptor"
 import { AppBar, Container } from "@mui/material"
+import PageLoader from "./components/Loader/PageLoader"
 
 const Home = lazy(() => import("./module/Home/Home"))
 const Category = lazy(() => import("./module/Category/Category"))
@@ -23,7 +24,7 @@ function App() {
               <Route
                 path="/"
                 element={
-                  <Suspense fallback={<>loading</>}>
+                  <Suspense fallback={<PageLoader />}>
                     <Home />
                   </Suspense>
                 }
